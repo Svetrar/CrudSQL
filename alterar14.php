@@ -21,14 +21,14 @@
 			die ("Falha na conexão com o banco de dados" . $conn->connect_error );
 		}
 
-		$comandoSQL = "SELECT * FROM `3daw cadastro de alunos` where Matrícula = '$matricula'";
+		$comandoSQL = "SELECT * FROM `alunos3daw` where Matrícula = '$matricula'";
 		$result = $conn->query($comandoSQL);
 		
 		$linha = $result->fetch_assoc();
 	 
 		if ($linha["Matrícula"] != $matricula)
 		{
-			echo "<script>alert ('Matrícula não encontrada'); window.location='Aula08 Ex14_enviaMatricula_SQL.php';</script>";
+			echo "<script>alert ('Matrícula não encontrada'); window.location='matriculaAltera14.php';</script>";
 		}
 	}
 	else
@@ -72,7 +72,7 @@
 
 		echo  "<script>alert('Os dados do Aluno(a): $nome foram alterados com Sucesso!');</script>";
 
-		echo "<script>window.location='Aula08 Ex14_alterarAluno_SQL.php?matricula=$matricula';</script>";
+		echo "<script>window.location='alterar14.php?matricula=$matricula';</script>";
 	}
 ?>
 
@@ -84,8 +84,8 @@
 	<a href="home14.php">Home</a><br>
 	<a href="alterar14.php">Alterar Aluno</a><br>
 	<a href="listar14.php">Listar Alunos</a><br>
-	<a href="matriculaAlerar.php">Excluir Aluno</a><br>
-	<a href="matriculaListar.php">Detalhe de Aluno</a><br> 
+	<a href="matriculaAlerar14.php">Excluir Aluno</a><br>
+	<a href="matriculaListar14.php">Detalhe de Aluno</a><br> 
 	<br><br>
 
 
