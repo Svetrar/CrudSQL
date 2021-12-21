@@ -13,7 +13,7 @@
 <br><br>
 
 	<h1>Listar Alunos</h1>
-	
+
 	<th>NOME</th>   
 	<th>MATRÍCULA</th>  
 	<th>EMAIL</th>  
@@ -24,54 +24,55 @@
 	<th>CIDADE</th>   
 	<th>ESTADO</th>
 	<th>CEP</th>
-	<th>AÇÕES</th>     
-	</tr>
+	<th>AÇÕES</th> 
+	
+</tr>
 
-	<?php
-
-
-	$servidor = "Localhost"; 
-
-	$usuario = "root";
-
-	$senha = ""; 
-
-	$nomeBanco = "3daw"; 
-
-	$conn = new mysqli($servidor, $usuario, $senha, $nomeBanco);
-
-	if ($conn->connect_error)
-	{
-		die ("Falha na conexão com o banco de dados" . $conn->connect_error ); 
-	}
+<?php
 
 
+$servidor = "Localhost"; 
 
-	$comandoSQL = "SELECT * FROM `alunos3daw`"; 
-	$result = $conn->query($comandoSQL);
+$usuario = "root";
 
-	$i=0;
+$senha = ""; 
 
-	while ($linha = $result->fetch_assoc())
-	{
-		echo "<tr>";
-		echo "<td>" . $linha["Nome"] . "</td>";
-		echo "<td>" . $linha["Matrícula"] . "</td>";
-		echo "<td>" . $linha["Email"] . "</td>";
-		echo "<td>" . $linha["Data de Nascimento"] . "</td>";
-		echo "<td>" . $linha["CPF"] . "</td>";
-		echo "<td>" . $linha["Telefone"] . "</td>";
-		echo "<td>" . $linha["Endereço"] . "</td>";
-		echo "<td>" . $linha["Cidade"] . "</td>";
-		echo "<td>" . $linha["Estado"] . "</td>";
-		echo "<td>" . $linha["CEP"] . "</td>";
-		echo "<td><a href= 'alterar14.php?matricula=" . $linha["Matrícula"] . "'>Alterar</a></td>";
-		echo "</tr>";
-		
-		$i++;
-	}
-	echo "</table>";  
-	?>
+$nomeBanco = "3daw"; 
+
+$conn = new mysqli($servidor, $usuario, $senha, $nomeBanco);
+
+if ($conn->connect_error)
+{
+	die ("Falha na conexão com o banco de dados" . $conn->connect_error ); 
+}
+
+
+
+$comandoSQL = "SELECT * FROM `alunos3daw`"; 
+$result = $conn->query($comandoSQL);
+
+$i=0;
+
+while ($linha = $result->fetch_assoc())
+{
+	echo "<tr>";
+	echo "<td>" . $linha["Nome"] . "</td>";
+	echo "<td>" . $linha["Matrícula"] . "</td>";
+	echo "<td>" . $linha["Email"] . "</td>";
+	echo "<td>" . $linha["Data de Nascimento"] . "</td>";
+	echo "<td>" . $linha["CPF"] . "</td>";
+	echo "<td>" . $linha["Telefone"] . "</td>";
+	echo "<td>" . $linha["Endereço"] . "</td>";
+	echo "<td>" . $linha["Cidade"] . "</td>";
+	echo "<td>" . $linha["Estado"] . "</td>";
+	echo "<td>" . $linha["CEP"] . "</td>";
+	echo "<td><a href= 'alterar14.php?matricula=" . $linha["Matrícula"] . "'>Alterar</a></td>";
+	echo "</tr>";
+
+	$i++;
+}
+echo "</table>";  
+?>
 
 </body>
 </html>
