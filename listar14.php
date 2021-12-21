@@ -13,9 +13,7 @@
 <br><br>
 
 	<h1>Listar Alunos</h1>
-
-	<table border= "single">
-	<tr style="background-color: LightGrey; text-align: center;">
+	
 	<th>NOME</th>   
 	<th>MATRÍCULA</th>  
 	<th>EMAIL</th>  
